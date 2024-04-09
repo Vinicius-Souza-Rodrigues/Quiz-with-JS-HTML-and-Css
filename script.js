@@ -34,11 +34,9 @@ let pergunta = document.getElementById('question')
 let titulo = document.querySelector('.titulo')
 let quiz = document.getElementById('quiz')
 
-let perguntaAtual = 0
+let questaoatual = 0
 
-console.log(questoes[2])
-
-proximo.addEventListener("click", iniciarquiz, criarformulario)
+proximo.addEventListener("click", criarformulario)
 
 botaoresposta.forEach(function(botao) {
     botao.addEventListener("click", function() {
@@ -47,14 +45,15 @@ botaoresposta.forEach(function(botao) {
 });
 
 function criarformulario() {
-    while(quiz.firstChild) {
-        quiz.removeChild(quiz.firstChild)
-
-        
-    }
+    pergunta.innerHTML = questoes[questaoatual].perguntas
+    let respostas = questoes[questaoatual].respostas;
+    botaoresposta.forEach(function(botao, index) {
+        botao.textContent = respostas[index].texto;
+    });
+    iniciarquiz()
 }
 
-async function iniciarquiz() {
+function iniciarquiz() {
     if(quiz.classList.contains('hide') == true) {
         quiz.classList.remove('hide')
         titulo.classList.remove('iniciar')
@@ -65,5 +64,8 @@ async function iniciarquiz() {
 
 function verificar(resposta) {
     console.log(resposta)
+    if(resposta =! true) {
+        console.log('acertou')
+    }
 }
 
