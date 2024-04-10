@@ -5,7 +5,7 @@
 }
 
 body {
-    height: 100vh;
+    height: 85vh;
     background: linear-gradient(120deg, rgba(109, 108, 108, 0.904), rgba(158, 155, 155, 0.76));
 }
 .container {
@@ -22,7 +22,6 @@ body {
 .quiz button{
     border-radius: 5px;
     border: none;
-    background-color: grey;
     width: 100%;
     min-width: 200px;
     height: 35px;
@@ -39,6 +38,12 @@ body {
     display: flex;
     flex-direction: column;
 }
+.botaoresposta {
+    background-color: grey;
+}
+.travado {
+    background-color: rgb(88, 85, 85);
+}
 .proximo {
     background-color: grey;
     width: 30%;
@@ -50,12 +55,14 @@ body {
     border: none;
     height: 30px;
     font-weight: 800;
+    font-size: 20px;
     cursor: pointer;
-}.correta {
-    background-color: green;
 }
-.errada {
-    background-color: red;
+.proximo:hover {
+    background-color: rgb(88, 85, 85);
+}
+.botaoresposta:hover {
+    background-color: rgb(88, 85, 85);;
 }
 .hide {
     display: none;
